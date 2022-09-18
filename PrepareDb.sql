@@ -1,6 +1,7 @@
-CREATE TABLE notes (
-	id				SERIAL PRIMARY KEY,
-	name			TEXT NOT NULL,
-	content 		TEXT NOT NULL,
-	tags			VARCHAR(255)[]
+CREATE TABLE "Notes" (
+	"Id"				SERIAL PRIMARY KEY,
+	"Name"			TEXT NULL,
+	"Content"			TEXT NULL,
+	"SecretContent" 	TEXT NULL,
+	"Tags"			TEXT[] NULL
 );
