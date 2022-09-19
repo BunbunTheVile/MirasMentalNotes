@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using MirasMentalNotes;
-using System.Text.Json;
 
 var config = MirasConfig.Load();
 if (config == null) throw new NullReferenceException("Config is null!");

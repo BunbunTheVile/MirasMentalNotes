@@ -43,9 +43,9 @@ namespace MirasMentalNotes
 
         [HttpGet]
         [Route("empty")]
-        public ActionResult<List<EmptyNote>> GetAllWithoutContent()
+        public ActionResult<List<Note>> GetAllWithoutContent()
         {
-            return context.Notes.Select(note => new EmptyNote { Id = note.Id, Name = note.Name, Tags = note.Tags }).ToList();
+            return context.Notes.Select(note => new Note { Id = note.Id, Name = note.Name, Tags = note.Tags }).ToList();
         }
 
         [HttpPut]
