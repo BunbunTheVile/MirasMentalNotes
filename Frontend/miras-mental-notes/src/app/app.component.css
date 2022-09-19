@@ -5,6 +5,10 @@
     width: 99.5vw;
 }
 
+.options {
+    border-bottom: 1px solid;
+}
+
 h1 {
     border-bottom: 1px solid;
 }
