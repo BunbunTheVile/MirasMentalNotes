@@ -49,11 +49,12 @@ namespace MirasMentalNotes
         }
 
         [HttpPut]
-        public ActionResult Update(Note note)
+        public ActionResult<Note> Update(Note note)
         {
             context.Update(note);
             context.SaveChanges();
-            return Ok();
+
+            return Get(note.Id);
         }
 
         [HttpDelete]
