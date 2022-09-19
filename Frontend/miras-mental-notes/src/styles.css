@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --background1: #fff;
+    --background2: #eee;
+    --text-color: #111;
+    --text-color-highlight: #6af;
+    --text-color-disabled: #aaa;
+    --border-color: #111;
+}
+
+* {
+    font-family: Verdana, Arial, sans-serif;
+    background-color: var(--background1);
+    color: var(--text-color);
+    border-color: var(--border-color) !important;
+}
+
+body {
+    margin: 1px;
+}
+
+h1, aside {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h1 {
+    text-align: center;
+}
