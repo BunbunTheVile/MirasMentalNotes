@@ -15,7 +15,7 @@ h1 {
 
 aside {
     border: 1px solid;
-    width: 300px;
+    min-width: 300px;
 }
 
 .main-content {

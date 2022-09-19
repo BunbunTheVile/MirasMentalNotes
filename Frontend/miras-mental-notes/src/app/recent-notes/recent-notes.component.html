@@ -1,3 +1,7 @@
-<div class="recent">
-    <h4>Recent</h4>
-</div>
+<h3>Recent</h3>
+<table>
+    <tr *ngFor="let note of notes">
+        <td id="noteId">{{ note.id }}</td>
+        <td>{{ note.name }}</td>
+    </tr>
+</table>

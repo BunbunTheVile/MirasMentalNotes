@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Note } from '../models/note.model';
+import { NoteService } from '../note.service';
 
 @Component({
   selector: 'app-recent-notes',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentNotesComponent implements OnInit {
 
-  constructor() { }
+  notes: Note[] = [];
+
+  constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
+    this.noteService.getAllWithoutContent().subscribe(x => this.notes = x);
   }
 
 }
