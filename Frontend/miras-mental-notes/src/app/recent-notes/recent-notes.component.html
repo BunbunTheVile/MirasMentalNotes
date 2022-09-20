@@ -1,7 +1,13 @@
 <h3>Recent</h3>
 <table>
-    <tr *ngFor="let note of notes" (click)="selectNote(note.id!)">
-        <td id="noteId">{{ "#" + note.id }}</td>
-        <td>{{ note.name }}</td>
-    </tr>
+    <div class="flex-container-horizontal" *ngFor="let note of notes" (click)="selectNote(note.id!)">
+        <h4 class="material-icons" *ngIf="!deletesInitiated.get(note.id!)" (click)="initiateDelete(note.id!)">delete</h4>
+        <h4 class="material-icons" *ngIf="deletesInitiated.get(note.id!)" (click)="stopDelete(note.id!)">restore</h4>
+        <h4 class="material-icons" *ngIf="deletesInitiated.get(note.id!)" (click)="delete(note.id!)">delete_forever</h4>
+
+        <tr>
+            <td id="noteId">{{ "#" + note.id }}</td>
+            <td>{{ note.name }}</td>
+        </tr>
+    </div>
 </table>

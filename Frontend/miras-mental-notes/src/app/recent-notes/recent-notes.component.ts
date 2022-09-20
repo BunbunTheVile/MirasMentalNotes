@@ -11,14 +11,19 @@ import { NoteService } from '../note.service';
 export class RecentNotesComponent implements OnInit {
 
   notes: Note[] = [];
+  deletesInitiated = new Map<number, boolean>();
 
   constructor(private noteService: NoteService, private router: Router) { }
 
   ngOnInit(): void {
-    this.noteService.getAllWithoutContent().subscribe(x => this.notes = x);
+    this.noteService.getAllWithoutContent().subscribe(x => {
+      this.notes = x;
+      this.notes.forEach(note => this.deletesInitiated.set(note.id!, false));
+    });
     
     this.noteService.noteCreated.subscribe(x => {
       this.notes.push(x);
+      this.deletesInitiated.set(x.id!, false);
       this.selectNote(x.id!);
     });
 
@@ -30,5 +35,19 @@ export class RecentNotesComponent implements OnInit {
 
   public selectNote(id: number): void {
     this.router.navigate(["view", id]);
+  }
+
+  public initiateDelete(id: number): void {
+    this.deletesInitiated.set(id, true);
+  }
+
+  public stopDelete(id: number): void {
+    this.deletesInitiated.set(id, false);
+  }
+
+  public delete(id: number): void {
+    this.noteService.delete(id).subscribe(() => {
+      this.noteService.noteDeleted.emit(this.notes.find(x => x.id === id));
+    });
   }
 }

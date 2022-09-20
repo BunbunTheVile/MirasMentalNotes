@@ -30,6 +30,18 @@ export class NoteViewComponent implements OnInit {
     this.tags.valueChanges.subscribe(() => this.checkIfNoteChanged());
     this.content.valueChanges.subscribe(() => this.checkIfNoteChanged());
   }
+  
+  private loadNote(id: number): void {
+    if (id === 0) {
+      this.note = { id: 0, name: "", content: "", tags: [] }
+      this.setFormValuesFromNote();
+    } else {
+      this.noteService.get(id).subscribe(x => {
+        this.note = x;
+        this.setFormValuesFromNote();
+      });
+    }
+  }
 
   private checkIfNoteChanged(): void {
     if (this.nameChanged() || this.tagsChanged() || this.contentChanged()) {
@@ -52,18 +64,6 @@ export class NoteViewComponent implements OnInit {
 
   private contentChanged(): boolean {
     return !(this.note.content == this.content.getRawValue());
-  }
-
-  private loadNote(id: number): void {
-    if (id === 0) {
-      this.note = { id: 0, name: "", content: "", tags: [] }
-      this.setFormValuesFromNote();
-    } else {
-      this.noteService.get(id).subscribe(x => {
-        this.note = x;
-        this.setFormValuesFromNote();
-      });
-    }
   }
 
   private setFormValuesFromNote(): void {
