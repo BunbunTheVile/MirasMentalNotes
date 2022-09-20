@@ -17,6 +17,7 @@ export class NoteViewComponent implements OnInit {
   content = new FormControl<string>("");
 
   noteHasChanged: boolean = false;
+  deleteInitiated: boolean = false;
 
   constructor(private noteService: NoteService, private route: ActivatedRoute) { }
 
@@ -109,5 +110,26 @@ export class NoteViewComponent implements OnInit {
     }
 
     this.checkIfNoteChanged();
+  }
+
+  public initiateDelete(): void {
+    if (!this.note.id || this.note.id == 0) return;
+    this.deleteInitiated = true;
+  }
+
+  public stopDelete(): void {
+    this.deleteInitiated = false;
+  }
+
+  public delete(): void {
+    if (!this.note.id || this.note.id == 0) {
+      this.deleteInitiated = false;
+      return;
+    }
+
+    this.noteService.delete(this.note.id!).subscribe(() => {
+      this.noteService.noteDeleted.emit(this.note);
+      this.deleteInitiated = false;
+    });
   }
 }

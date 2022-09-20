@@ -16,9 +16,15 @@ export class RecentNotesComponent implements OnInit {
 
   ngOnInit(): void {
     this.noteService.getAllWithoutContent().subscribe(x => this.notes = x);
+    
     this.noteService.noteCreated.subscribe(x => {
       this.notes.push(x);
       this.selectNote(x.id!);
+    });
+
+    this.noteService.noteDeleted.subscribe(x => {
+      this.notes = this.notes.filter(note => note.id !== x.id);
+      this.selectNote(0);
     });
   }
 

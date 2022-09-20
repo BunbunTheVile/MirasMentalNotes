@@ -11,6 +11,9 @@ export class NoteService {
   @Output()
   public noteCreated = new EventEmitter<Note>();
 
+  @Output()
+  public noteDeleted = new EventEmitter<Note>();
+
   backendUrl: string = "http://localhost:5000/note";
 
   constructor(private http: HttpClient) { }
