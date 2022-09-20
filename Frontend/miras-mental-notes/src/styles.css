@@ -2,7 +2,7 @@
     --background1: #fff;
     --background2: #eee;
     --text-color: #111;
-    --text-color-highlight: #6af;
+    --text-color-highlight: #38e;
     --text-color-disabled: #aaa;
     --border-color: #111;
 }
@@ -26,4 +26,22 @@ h1, h2, h3, h4, h5, h6, aside {
 
 h1 {
     text-align: center;
+}
+
+.flex-container-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.material-icons {
+    color: var(--text-color-highlight);
+}
+
+.material-icons:hover {
+    cursor: pointer;
 }

@@ -1,0 +1,19 @@
+<div class="flex-container-vertical">
+
+    <div class="flex-container-horizontal">
+        <!--Use pipe to format id-->
+        <h4 class="label">{{note.id === 0 ? "..." : "#" + note.id}}</h4>
+        <input id="name" type="text" [formControl]="name">
+        <h4 class="material-icons" [ngClass]="noteHasChanged ? '' : 'disabled'" (click)="save()">save</h4>
+    </div>
+
+    <div class="flex-container-horizontal">
+        <h5 class="label">Tags:</h5>
+        <input id="tags" type="text" [formControl]="tags">
+    </div>
+
+    <div style="flex-grow:1">
+        <textarea id="content" type="text" [formControl]="content"></textarea>
+    </div>
+
+</div>

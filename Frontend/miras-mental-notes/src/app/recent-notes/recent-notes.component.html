@@ -1,7 +1,7 @@
 <h3>Recent</h3>
 <table>
-    <tr *ngFor="let note of notes">
-        <td id="noteId">{{ note.id }}</td>
+    <tr *ngFor="let note of notes" (click)="selectNote(note.id!)">
+        <td id="noteId">{{ "#" + note.id }}</td>
         <td>{{ note.name }}</td>
     </tr>
 </table>

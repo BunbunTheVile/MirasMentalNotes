@@ -12,8 +12,6 @@ builder.Services.AddDbContext<MirasDbContext>(options =>
 
 if (builder.Environment.IsDevelopment())
 {
-    Console.WriteLine("IT'S DEVELOPMENT");
-
     builder.Services.AddCors(options =>
     {
         options.AddPolicy(

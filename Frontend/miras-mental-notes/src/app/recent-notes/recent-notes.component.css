@@ -8,3 +8,7 @@ h3 {
     padding-left: 4px;
     padding-right: 8px;
 }
+
+tr:hover {
+    cursor: pointer;
+}

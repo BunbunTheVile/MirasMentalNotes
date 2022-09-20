@@ -1,0 +1,33 @@
+.label {
+    padding: 0 4px 0 4px;
+}
+
+.flex-container-vertical {
+    height: 90%;
+}
+
+#name, #tags {
+    width: 100%;
+}
+
+#content {
+    margin: 4px;
+    width: calc(100% - 16px);
+    height: 100%;
+}
+
+.material-icons {
+    margin-left: 4px;
+}
+
+.flex-container-horizontal {
+    margin: 0 4px 4px 4px;
+}
+
+.disabled {
+    color: var(--text-color-disabled);
+}
+
+.disabled:hover {
+    cursor: default;
+}

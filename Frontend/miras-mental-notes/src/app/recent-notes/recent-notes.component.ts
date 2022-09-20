@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Note } from '../models/note.model';
 import { NoteService } from '../note.service';
 
@@ -11,10 +12,14 @@ export class RecentNotesComponent implements OnInit {
 
   notes: Note[] = [];
 
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService, private router: Router) { }
 
   ngOnInit(): void {
     this.noteService.getAllWithoutContent().subscribe(x => this.notes = x);
   }
 
+  public selectNote(id: number): void {
+    this.router.navigate(["view", id]);
+    console.log("NAVIGATE")
+  }
 }
