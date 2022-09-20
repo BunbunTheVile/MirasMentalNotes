@@ -1,0 +1,17 @@
+h3 {
+    text-align: center;
+}
+
+.flex-container-horizontal {
+    align-items: center;
+    padding-left: 8px;
+    margin: 2px 0 2px 0;
+}
+
+.flex-container-horizontal:hover {
+    cursor: pointer;
+}
+
+i {
+    padding-right: 4px;
+}

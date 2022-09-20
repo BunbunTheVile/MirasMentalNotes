@@ -1,7 +1,8 @@
+-add options menu with "New Note", "Search", and "Settings" (no functionality yet)
+-add new note button
+-note deletion
 -only show recent notes under "Recent", not all notes
 -figure out a prettier title
 -research and implement consistent colour choices
 -implement tab bar
--add options menu with "New Note", "Search", and "Settings" (no functionality yet)
--implement note view component
 -figure out how to read a config.json in frontend

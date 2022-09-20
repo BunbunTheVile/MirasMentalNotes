@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Note } from './models/note.model';
 
@@ -7,6 +7,9 @@ import { Note } from './models/note.model';
   providedIn: 'root'
 })
 export class NoteService {
+
+  @Output()
+  public noteCreated = new EventEmitter<Note>();
 
   backendUrl: string = "http://localhost:5000/note";
 

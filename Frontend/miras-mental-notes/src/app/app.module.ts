@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { RecentNotesComponent } from './recent-notes/recent-notes.component';
 import { NoteViewComponent } from './note-view/note-view.component';
 import { AppRoutingModule } from './app-routing.module';
+import { OptionsMenuComponent } from './options-menu/options-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecentNotesComponent,
-    NoteViewComponent
+    NoteViewComponent,
+    OptionsMenuComponent
   ],
   imports: [
     BrowserModule,

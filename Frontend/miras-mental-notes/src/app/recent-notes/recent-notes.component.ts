@@ -16,10 +16,13 @@ export class RecentNotesComponent implements OnInit {
 
   ngOnInit(): void {
     this.noteService.getAllWithoutContent().subscribe(x => this.notes = x);
+    this.noteService.noteCreated.subscribe(x => {
+      this.notes.push(x);
+      this.selectNote(x.id!);
+    });
   }
 
   public selectNote(id: number): void {
     this.router.navigate(["view", id]);
-    console.log("NAVIGATE")
   }
 }

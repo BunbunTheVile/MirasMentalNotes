@@ -22,7 +22,7 @@ export class NoteViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.loadNote(params["id"]);
+      this.loadNote(Number(params["id"]));
     });
 
     this.name.valueChanges.subscribe(() => this.checkIfNoteChanged());
@@ -100,6 +100,7 @@ export class NoteViewComponent implements OnInit {
     if (this.note.id === 0) {
       this.noteService.create(this.note).subscribe(x => {
         this.note = x;
+        this.noteService.noteCreated.emit(this.note);
       });
     } else {
       this.noteService.update(this.note).subscribe(x => {

@@ -21,7 +21,8 @@
 }
 
 .flex-container-horizontal {
-    margin: 0 4px 4px 4px;
+    margin: 2px 4px 2px 4px;
+    align-items: center;
 }
 
 .disabled {
