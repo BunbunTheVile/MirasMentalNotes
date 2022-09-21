@@ -5,9 +5,11 @@
         <h4 class="label">{{note.id === 0 ? "..." : "#" + note.id}}</h4>
         <input id="name" type="text" [formControl]="name">
 
-        <h4 class="material-icons" [ngClass]="noteHasChanged ? '' : 'disabled'" (click)="save()">save</h4>
+        <h4 class="material-icons" *ngIf="noteHasChanged" (click)="save()">save</h4>
+        <h4 class="material-icons disabled" *ngIf="!noteHasChanged">save</h4>
 
-        <h4 class="material-icons" *ngIf="!deleteInitiated" (click)="initiateDelete()">delete</h4>
+        <h4 class="material-icons" *ngIf="!deleteInitiated && !(note.id === 0)" (click)="initiateDelete()">delete</h4>
+        <h4 class="material-icons disabled" *ngIf="!deleteInitiated && (note.id === 0)">delete</h4>
         <h4 class="material-icons" *ngIf="deleteInitiated" (click)="delete()">delete_forever</h4>
         <h4 class="material-icons" *ngIf="deleteInitiated" (click)="stopDelete()">restore</h4>
     </div>

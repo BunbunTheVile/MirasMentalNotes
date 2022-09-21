@@ -24,6 +24,7 @@ export class NoteViewComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.loadNote(Number(params["id"]));
+      this.deleteInitiated = false;
     });
 
     this.name.valueChanges.subscribe(() => this.checkIfNoteChanged());
