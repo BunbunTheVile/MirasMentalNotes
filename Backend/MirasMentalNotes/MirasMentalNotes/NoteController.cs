@@ -19,7 +19,7 @@ namespace MirasMentalNotes
             context.Add(note);
             context.SaveChanges();
 
-            var newNote = context.Notes.ToList().Last();
+            var newNote = context.Notes.OrderBy(x => x.Id).ToList().Last();
 
             return Created($"note/{newNote.Id}", newNote);
         }

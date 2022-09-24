@@ -110,7 +110,7 @@ export class NoteViewComponent implements OnInit {
       });
     }
 
-    this.checkIfNoteChanged();
+    this.noteHasChanged = false;
   }
 
   public initiateDelete(): void {

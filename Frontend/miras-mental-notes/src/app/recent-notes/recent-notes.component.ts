@@ -19,17 +19,20 @@ export class RecentNotesComponent implements OnInit {
     this.noteService.getAllWithoutContent().subscribe(x => {
       this.notes = x;
       this.notes.forEach(note => this.deletesInitiated.set(note.id!, false));
+      this.sortNotes();
     });
     
     this.noteService.noteCreated.subscribe(x => {
       this.notes.push(x);
       this.deletesInitiated.set(x.id!, false);
       this.selectNote(x.id!);
+      this.sortNotes();
     });
 
     this.noteService.noteDeleted.subscribe(x => {
       this.notes = this.notes.filter(note => note.id !== x.id);
       this.selectNote(0);
+      this.sortNotes();
     });
   }
 
@@ -49,5 +52,9 @@ export class RecentNotesComponent implements OnInit {
     this.noteService.delete(id).subscribe(() => {
       this.noteService.noteDeleted.emit(this.notes.find(x => x.id === id));
     });
+  }
+
+  private sortNotes(): void {
+    this.notes = this.notes.sort((a, b) => a.id! - b.id!)
   }
 }

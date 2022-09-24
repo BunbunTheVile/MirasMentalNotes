@@ -1,0 +1,10 @@
+{
+  "Id": 49,
+  "Name": "Mayterran Military Unit Sizes",
+  "Content": "Army: 20.000 - 50.000\nDivision: 2.000 - 5.000\nBrigade: 500 - 1.000\nRegiment: 100 - 500\nCompany: 20 - 50\nTroop: variable, smaller than company",
+  "SecretContent": null,
+  "Tags": [
+    "mayterrar",
+    "military"
+  ]
+}

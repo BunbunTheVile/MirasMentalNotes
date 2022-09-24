@@ -6,3 +6,7 @@
 -implement import/export functionality for .txt/.note files
 -fix options clickable block size
 -don't allow { or } or in note names in frontend
+-remove tag whitespace after save
+-sort recent notes by id
+-figure out why note save sometimes messes up recent notes
+	seems to be bc post returns the wrong note!
