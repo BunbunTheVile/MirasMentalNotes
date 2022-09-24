@@ -16,4 +16,8 @@ export class OptionsMenuComponent implements OnInit {
   public newNote(): void {
     this.router.navigate(["view", 0]);
   }
+
+  public goToSettings(): void {
+    this.router.navigate(["settings"]);
+  }
 }

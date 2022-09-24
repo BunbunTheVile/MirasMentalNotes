@@ -1,3 +1,5 @@
 {
-  "ConnectionString": "Host=localhost; Database=miras; Username=postgres; Password=postgres"
+  "ConnectionString": "Host=localhost; Database=miras; Username=postgres; Password=postgres",
+  "ImportDirectory": "import",
+  "ExportDirectory": "export"
 }

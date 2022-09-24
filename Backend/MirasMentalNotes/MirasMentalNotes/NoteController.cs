@@ -70,5 +70,13 @@ namespace MirasMentalNotes
 
             return Ok();
         }
+
+        [HttpPost]
+        [Route("export")]
+        public ActionResult ExportNotes()
+        {
+            NoteHelper.ExportNotes(context);
+            return Ok();
+        }
     }
 }

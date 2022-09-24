@@ -27,6 +27,9 @@ if (builder.Environment.IsDevelopment())
 
 var app = builder.Build();
 
+//TODO: delete
+//NoteHelper.ExportNotes(new MirasDbContext(new DbContextOptionsBuilder<MirasDbContext>().UseNpgsql(config.ConnectionString).Options));
+
 app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
 app.MapControllers();

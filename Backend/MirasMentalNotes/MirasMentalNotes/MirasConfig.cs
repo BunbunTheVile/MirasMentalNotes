@@ -5,6 +5,8 @@ namespace MirasMentalNotes
     public class MirasConfig
     {
         public string ConnectionString { get; set; } = "";
+        public string ImportDirectory { get; set; } = "import";
+        public string ExportDirectory { get; set; } = "export";
 
         public static MirasConfig? Load()
         {

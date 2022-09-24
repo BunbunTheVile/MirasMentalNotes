@@ -41,4 +41,8 @@ export class NoteService {
   public delete(id: number): Observable<any> {
     return this.http.delete(`${this.backendUrl}/${id}`);
   }
+
+  public export(): Observable<any> {
+    return this.http.post(`${this.backendUrl}/export`, null);
+  }
 }

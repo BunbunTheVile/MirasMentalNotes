@@ -1,9 +1,8 @@
--add options menu with "New Note", "Search", and "Settings" (no functionality yet)
--add new note button
--note deletion in recent-notes
 -only show recent notes under "Recent", not all notes
 -figure out a prettier title
 -research and implement consistent colour choices
 -implement tab bar
 -figure out how to read a config.json in frontend
--don't actually call create, put or delete when buttons are disabled
+-implement import/export functionality for .txt/.note files
+-fix options clickable block size
+-don't allow { or } or in note names in frontend
